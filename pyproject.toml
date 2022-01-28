@@ -8,6 +8,7 @@ authors = [{name = "Jay Liu", email = "jay.liu@ucsf.edu"}]
 license = {file = "LICENSE"}
 classifiers = ["License :: OSI Approved :: MIT License"]
 dynamic = ["version", "description"]
+dependencies = ["pytest", "numpy"]
 
 [project.urls]
 Home = "https://github.com/jayliu99/project4"
