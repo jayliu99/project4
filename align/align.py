@@ -34,8 +34,8 @@ class NeedlemanWunsch:
 
 		# Init matrices for backtrace procedure
 		self._back = None
-		self._back_A = None
-		self._back_B = None
+		# self._back_A = None
+		# self._back_B = None
 
 		# Init alignment_score
 		self.alignment_score = 0
@@ -171,16 +171,14 @@ class NeedlemanWunsch:
 				(alignment score, seqA alignment, seqB alignment) 
 				e.g. (17, "MAVHQLIRRP", "M---QLIRHP")
 		"""
-		# Initialize 6 matrix private attributes for use in alignment
+		# Initialize matrix private attributes for use in alignment
 		# create matrices for alignment scores and gaps
 		self._align_matrix = np.ones((len(seqB) + 1, len(seqA) + 1)) * -np.inf
 		self._gapA_matrix = np.ones((len(seqB) + 1, len(seqA) + 1)) * -np.inf
 		self._gapB_matrix = np.ones((len(seqB) + 1, len(seqA) + 1)) * -np.inf
 
-		# create matrices for pointers used in backtrace procedure
+		# create matrix used in backtrace procedure
 		self._back = np.ones((len(seqB) + 1, len(seqA) + 1)) * -np.inf
-		# self._back_A = np.ones((len(seqB) + 1, len(seqA) + 1)) * -np.inf
-		# self._back_B = np.ones((len(seqB) + 1, len(seqA) + 1)) * -np.inf
 
 		# Resetting alignment in case method is called more than once
 		self.seqA_align = ""
